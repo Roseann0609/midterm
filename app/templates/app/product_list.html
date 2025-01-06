@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+{% block content %}
+    <a href="{% url 'product_create' %}">+ Upload New Item</a>
+    {% for product in products %}
+                <div class="product-card">
+            <h2><a href="{% url 'product_detail' product.pk %}">{{product.name}}</a> </h2>
+            <p>{{product.price}}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}
