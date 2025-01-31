@@ -1,0 +1,43 @@
+{% extends 'app/base.html' %}
+{% block content %}
+
+<body class="{% block body_class %}contact-background{% endblock %}">
+
+    <h1>Contact Us</h1>
+
+    <section class="contact-form">
+        <h2>We'd Love to Hear From You</h2>
+        <p>If you have any questions or comments, feel free to reach out to us through this form.</p>
+
+        <form action="{% url 'contact' %}" method="POST">
+            {% csrf_token %}
+            
+            <!-- Name Input -->
+            <div class="contact-input">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <!-- Email Input -->
+            <div class="contact-input">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Message Input -->
+            <div class="contact-input">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-button">
+                <a href="{% url 'home' %}"></a>
+                <input type="submit" value="Send Message">
+            </a>
+            </div>
+
+        </form>
+    </section>
+</body>
+{% endblock %}

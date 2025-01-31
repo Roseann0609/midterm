@@ -1,0 +1,38 @@
+{% extends 'app/base.html' %}
+{% block content %}
+
+
+<body class="{% block body_class %}review-background{% endblock %}">
+
+    <h1>Review Our Products</h1>
+    
+    
+    <section class="review-form">
+        
+            {% csrf_token %}
+            
+            <div class="rating">
+                <label for="rating">Rate the product: </label>
+                <select id="rating" name="rating" required>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </div>
+            
+            <div class="review-description">
+                <label for="description">Your Review:</label>
+                <textarea id="description" name="description" rows="4" placeholder="Write your review here..." required></textarea>
+            </div>
+            
+            <div class="submit-button">
+                <a href="{% url 'home' %}">
+                <input type="submit" value="Submit Review">
+            </a>
+            </div>
+        </form>
+    </section>
+</body>
+{% endblock %}

@@ -1,0 +1,14 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+  background-image: url ('https://i.pinimg.com/736x/07/40/28/074028d1ba575386eeb4ed73397c1129.jpg');
+  
+}

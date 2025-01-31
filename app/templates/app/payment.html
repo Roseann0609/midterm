@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<body class="{% block body_class %}login-background{% endblock %}">
+
+    <h1>Payment</h1>
+
+    <section class="payment-form">
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Payment Method Selection -->
+            <div class="payment-input">
+                <label for="payment_method">Choose Payment Method</label>
+                <select id="payment_method" name="payment_method" required>
+                    <option value="credit_card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank_transfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <!-- Payment Details -->
+            <div class="payment-input">
+                <label for="payment_details">Payment Details</label>
+                <input type="text" id="payment_details" name="payment_details" placeholder="Enter your payment details" required>
+            </div>
+
+            <!-- Amount Input -->
+            <div class="payment-input">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" name="amount" placeholder="Enter amount" required min="1">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-button">
+                <input type="submit" value="Submit Payment">
+            </div>
+        </form>
+    </section>
+
+</body>
+{% endblock %}

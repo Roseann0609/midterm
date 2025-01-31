@@ -1,9 +1,123 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
 {% block content %}
 
+<body class="{% block body_class %}home-background{% endblock %}">
 
-<header>
-    <a href = "{% url 'home' %}">Home</a>
-    <a href="{% url 'product' %}">Product</a> 
-</header>
+<!-- Hero Section -->
+<section id="home" class="products-list">
+    <div class="hero-content">
+        <h1>Elegant Jewelry for Every Occasion</h1>
+        <p>Discover our unique collection of handcrafted jewelry.</p>
+        <a href="#products" class="btn">Shop Now</a>
+    </div>
+</section>
 
-{% endblock content %}
+<!-- Product Section -->
+<section id="products" class="products">
+    <h2>Our Collection</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://i.pinimg.com/736x/54/d8/5a/54d85acde1473bfd21a7a6fa6faecf24.jpg" alt="Gold Necklace">
+            <h3>Gold Necklace</h3>
+            <p>₱250</p>
+            <button class="btn add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+            <button class="btn wishlist">
+                <i class="fas fa-heart"></i> Add to Wishlist
+            </button>
+        </div>
+        <div class="product">
+            <img src="https://i.pinimg.com/736x/00/96/39/00963930ad465de50ba40b108c7f6f9d.jpg" alt="Silver Bracelet">
+            <h3>Silver Bracelet</h3>
+            <p>₱150</p>
+            <button class="btn add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+            <button class="btn wishlist">
+                <i class="fas fa-heart"></i> Add to Wishlist
+            </button>
+        </div>
+        <div class="product">
+            <img src="https://i.pinimg.com/736x/c7/19/33/c71933d7277fc3faedd356d409d28165.jpg" alt="Diamond Earrings">
+            <h3>Diamond Earrings</h3>
+            <p>₱300</p>
+
+        <button class="btn add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button class="btn wishlist">
+                    <i class="fas fa-heart"></i> Add to Wishlist
+                </button>
+            </button>
+            
+            
+        </div>
+        <div class="product">
+            <img src="https://www.soolinen.com/cdn/shop/files/Elegant-Gold-Copper-Alloy-Zircon-Pearl-Bow-Hoop-Earrings3_1800x1800.jpg?v=1725709604" alt="Diamond Earrings">
+            <h3>Diamond Earrings</h3>
+            <p>₱300</p>
+
+        <button class="btn add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button class="btn wishlist">
+                    <i class="fas fa-heart"></i> Add to Wishlist
+                </button>
+            </button>
+            
+            
+        </div>
+        <div class="product">
+            <img src="https://i.pinimg.com/736x/d8/83/6c/d8836c41826eadce404ab8689a752986.jpg" alt="Silver Bracelet">
+            <h3>Gold Bracelet</h3>
+            <p>₱150</p>
+            <button class="btn add-to-cart">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+            <button class="btn wishlist">
+                <i class="fas fa-heart"></i> Add to Wishlist
+            </button>
+        </div>
+        
+    </div>
+    
+</section>
+</body>
+
+<script>
+    
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const wishlistButtons = document.querySelectorAll('.wishlist');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Item added to cart!');
+           
+        }
+        );
+    }
+    );
+
+    wishlistButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Item added to wishlist!');
+            
+        }
+        );
+    }
+    );
+
+    
+    const searchButton = document.getElementById('search-button');
+    searchButton.addEventListener('click', () => {
+        const searchTerm = document.getElementById('search-bar').value;
+        alert('Searching for: ' + searchTerm);
+       
+    });
+</script>
+</body>
+</html>
+{% endblock %}
